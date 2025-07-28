@@ -27,7 +27,7 @@ st.markdown("""
 st.markdown("## 2️⃣ 캠과 일반 원형 회전체 비교")
 st.markdown("아래 이미지는 **일반 원형**과 **캠 형태**의 구조를 비교한 그림입니다. 어떤 차이점이 느껴지나요?")
 
-st.image("modules/A_two-dimensional_digital_illustration_diagram_dis.png", caption="원형과 캠 구조 비교", use_container_width=True)
+st.image("pages/A_two-dimensional_digital_illustration_diagram_dis.png", caption="원형과 캠 구조 비교", use_container_width=True)
 
 st.markdown("## 3️⃣ 🤔 퀴즈: 어떤 캠이 더 높이 밀어올릴까?")
 quiz_answer = st.radio("긴 반지름과 짧은 반지름의 차이가 클수록, 막대는 어떻게 움직일까요?", 
