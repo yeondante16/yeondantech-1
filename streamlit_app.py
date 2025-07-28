@@ -2,6 +2,8 @@ import streamlit as st
 from PIL import Image
 import os
 
+
+
 # 프로젝트 소개
 st.title("⚙️ 기계요소의 움직임을 이해하고 오토마타 만들기")
 
@@ -49,3 +51,45 @@ st.markdown("""
 """)
 st.page_link("pages/7_chatbot_helper.py", label="🤖 챗봇 도우미 열기")
 
+
+
+# 페이지 설정
+st.set_page_config(layout="wide")
+st.title("🛠️ 기계요소 기반 오토마타 프로젝트")
+
+# 메뉴 선택
+page = st.sidebar.selectbox("단원을 선택하세요", [
+    "1. 프로젝트 개요",
+    "2. 기계요소 - 회전",
+    "2. 기계요소 - 캠",
+    "2. 기계요소 - 크랭크",
+    "2. 기계요소 - 기어",
+    "2. 기계요소 - 링크",
+    "3. 오토마타 - 제작 과정",
+    "3. 오토마타 - 챗봇 도우미"
+])
+
+# 각 메뉴에 따라 다른 모듈 실행
+if page == "1. 프로젝트 개요":
+    st.markdown("### 프로젝트 개요 페이지입니다.")
+elif page == "2. 기계요소 - 회전":
+    import pages.rotation_basics as mod
+    mod.render()
+elif page == "2. 기계요소 - 캠":
+    import pages.cam_module as mod
+    mod.render()
+elif page == "2. 기계요소 - 크랭크":
+    import pages.crank_module as mod
+    mod.render()
+elif page == "2. 기계요소 - 기어":
+    import pages.gear_module as mod
+    mod.render()
+elif page == "2. 기계요소 - 링크":
+    import pages.link_module as mod
+    mod.render()
+elif page == "3. 오토마타 - 제작 과정":
+    import pages.automata_final as mod
+    mod.render()
+elif page == "3. 오토마타 - 챗봇 도우미":
+    import pages.chatbot_helper as mod
+    mod.render()

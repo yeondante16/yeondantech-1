@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 import os
 
+def render():
+    st.markdown("## 캠 기구의 원리")
+
 # 한글 폰트 설정
 def get_korean_font(size=12):
     font_path = os.path.join("fonts", "NanumGothic-Regular.ttf")

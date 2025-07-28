@@ -5,6 +5,9 @@ import matplotlib.font_manager as fm
 import numpy as np
 import os
 
+def render():
+    st.markdown("## 회전 운동의 이해")
+
 # 한글 폰트 설정
 def get_korean_font(size=12):
     font_path = os.path.join("fonts", "NanumGothic-Regular.ttf")
