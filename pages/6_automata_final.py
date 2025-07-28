@@ -1,3 +1,2 @@
 import streamlit as st
-def render():
-    st.markdown("## 오토마타 설계 마무리")
+st.set_page_config(page_title="오토마타 설계", layout="wide")

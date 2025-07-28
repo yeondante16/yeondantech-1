@@ -1,3 +1,2 @@
 import streamlit as st
-def render():
-    st.markdown("## 링크 기구의 구성과 운동")
+st.set_page_config(page_title="링크 기구의 원리", layout="wide")

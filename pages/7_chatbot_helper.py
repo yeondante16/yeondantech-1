@@ -1,3 +1,2 @@
 import streamlit as st
-def render():
-    st.markdown("## 챗봇 도우미 사용법")
+st.set_page_config(page_title="챗봇 도우미", layout="wide")

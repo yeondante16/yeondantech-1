@@ -1,3 +1,2 @@
 import streamlit as st
-def render():
-    st.markdown("## 기어의 종류와 원리")
+st.set_page_config(page_title="기어의 원리", layout="wide")

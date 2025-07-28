@@ -5,8 +5,7 @@ import matplotlib.font_manager as fm
 import numpy as np
 import os
 
-def render():
-    st.markdown("## 회전 운동의 이해")
+st.set_page_config(page_title="회전 운동의 이해", layout="wide")
 
 # 한글 폰트 설정
 def get_korean_font(size=12):
