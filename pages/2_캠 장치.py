@@ -1,59 +1,40 @@
 import streamlit as st
-import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
-import os
+import streamlit.components.v1 as components
 
-st.set_page_config(page_title="캠 기구의 원리", layout="wide")
+st.set_page_config(page_title="캠 장치", layout="wide")
 
-# 한글 폰트 설정
-def get_korean_font(size=12):
-    font_path = os.path.join("fonts", "NanumGothic-Regular.ttf")
-    return fm.FontProperties(fname=font_path, size=size)
+# ---- 헤더 영역 ----
+col1, col2 = st.columns([1, 3])
 
-font_prop = get_korean_font()
+with col1:
+    st.image("Cam.gif", caption="캠 운동 예시", use_column_width=True)
 
-st.title("🔁 캠의 원리 이해하기")
+with col2:
+    st.markdown("### 🛠️ 캠(Cam) 장치에 대해 알아봅시다!")
+    st.markdown("""
+    캠은 회전 운동을 직선 운동으로 바꿔주는 부품입니다.  
+    생김새는 둥글지만 한쪽이 불룩하게 튀어나와 있어서,  
+    캠이 돌 때마다 연결된 막대나 판이 위아래로 움직이게 됩니다.  
+    이 원리를 이용하면 인형에 숨을 추가하거나,  
+    동물의 고개를 끄덕이는 것처럼 다양한 움직임을 만들 수 있어요.  
+    오토마타를 만들 때 아주 중요한 역할을 한답니다.
+    """)
 
-st.markdown("## 1️⃣ 캠이란?")
-st.markdown("""
-캠(Cam)은 **회전 운동을 직선 운동으로 바꾸는 장치**입니다.  
-기계 내부에서 특정 간격으로 무언가를 밀어 올리거나 누를 때 사용됩니다.
+    st.markdown("📎 [오토마타 캠 장치 예시 링크](https://example.com)")
 
-예를 들어,  
-- 인형의 눈을 깜빡이게 하거나  
-- 자동 연필깎이에서 칼날을 움직이게 하거나  
-- 자동차 엔진의 밸브 타이밍 제어 등  
-다양한 곳에 활용됩니다.
-""")
+st.markdown("---")
 
-st.markdown("## 2️⃣ 캠과 일반 원형 회전체 비교")
-st.markdown("아래 이미지는 **일반 원형**과 **캠 형태**의 구조를 비교한 그림입니다. 어떤 차이점이 느껴지나요?")
+# ---- 섹션 1: 캠 크기 계산기 ----
+st.markdown("### 📏 캠에 대해 더 알아봅시다!")
+st.subheader("1️⃣ 캠 크기 디자인")
+st.markdown("오토마타 제작을 위해 캠의 크기와 가동범위를 설정해 봅시다.")
 
-st.image("pages/A_two-dimensional_digital_illustration_diagram_dis.png", caption="원형과 캠 구조 비교", use_container_width=True)
+components.html(
+    '<iframe src="https://script.google.com/macros/s/AKfycbwpJCNxhVnPP8AxC7C19hsHYar_Yjk9Dj75hiWegPgrpDxbZ78l6FgnyrKnvOJV_Fqb8A/exec" width="100%" height="600"></iframe>',
+    height=600
+)
 
-st.markdown("## 3️⃣ 🤔 퀴즈: 어떤 캠이 더 높이 밀어올릴까?")
-quiz_answer = st.radio("긴 반지름과 짧은 반지름의 차이가 클수록, 막대는 어떻게 움직일까요?", 
-                       ["더 많이 움직인다", "덜 움직인다", "차이가 없다"])
-
-if quiz_answer:
-    st.markdown("✅ 정답 확인:")
-    if quiz_answer == "더 많이 움직인다":
-        st.success("정답입니다! 긴 반지름과 짧은 반지름의 차이가 클수록, 막대는 더 많이 위아래로 움직여요.")
-    else:
-        st.warning("아쉽지만 다시 생각해보세요. 회전하는 동안 길이가 많이 변해야, 막대도 더 많이 움직이겠죠!")
-
-st.markdown("## 4️⃣ 🧮 캠 설계 시뮬레이션")
-st.markdown("""
-캠의 **짧은 반지름**과 **긴 반지름**을 조절하면, 막대를 얼마나 올릴 수 있는지를 예측할 수 있어요.
-
-- 예를 들어, 짧은 반지름이 1cm이고 긴 반지름이 3cm라면,  
-  회전하면서 막대는 **최대 2cm까지** 위로 올라갑니다.
-""")
-
-short_radius = st.slider("짧은 반지름(cm)", 0.5, 5.0, 1.0, step=0.5)
-long_radius = st.slider("긴 반지름(cm)", short_radius + 0.5, short_radius + 5.0, short_radius + 2.0, step=0.5)
-
-stroke = long_radius - short_radius
-st.markdown(f"🎯 막대가 최대 **{stroke:.1f}cm** 만큼 위로 움직입니다.")
-
-st.markdown("📝 실제 캠을 만들 때 이 값을 고려해서, 움직임의 크기를 조절할 수 있어요.")
+# ---- 섹션 2: 캠 활용 예시 ----
+st.subheader("2️⃣ 캠 장치의 활용 예시")
+st.image("pen.png", caption="연필깎이 캠 활용 사례", use_column_width=True)
+st.markdown("연필깎이부터 자동차 엔진까지, 일상 속에서 캠이 활용되는 다양한 예시를 알아봅니다.")
