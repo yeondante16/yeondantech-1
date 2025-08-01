@@ -27,28 +27,13 @@ st.markdown("""
 col1, col2 = st.columns(2)
 
 with col1:
-    st.page_link("pages/1_회전 운동의 이해.py", label="🔁 1. 회전력 기초 이해", icon="🔍")
-    st.page_link("pages/2_캠 장치.py", label="📐 2. 캠의 원리", icon="📈")
-    st.page_link("pages/3_크랭크 장치.py", label="🔄 3. 크랭크의 원리", icon="🎚️")
+    st.page_link("pages/1_회전 운동의 이해.py", label="1. 회전력 기초 이해", icon="🔍")
+    st.page_link("pages/2_캠 장치.py", label="2. 캠의 원리", icon="📈")
+    st.page_link("pages/3_크랭크 장치.py", label="3. 크랭크의 원리", icon="🎚️")
 
 with col2:
-    st.page_link("pages/4_기어 장치.py", label="⚙️ 4. 기어의 원리", icon="⚙️")
-    st.page_link("pages/5_링크 장치.py", label="🔗 5. 링크의 원리", icon="🔧")
-    st.page_link("pages/6_오토마타 설계.py", label="🎨 6. 오토마타 설계 및 제작", icon="🛠️")
-
-# 이미지 (선택)
-img_path = os.path.join("assets", "automata_preview.png")
-if os.path.exists(img_path):
-    st.image(img_path, caption="예시: 오토마타 완성 모습", use_container_width=True)
-
-st.markdown("---")
-
-# AI 챗봇 안내
-st.subheader("💬 AI 도우미 챗봇")
-st.markdown("""
-학습 중 어려운 개념이 있다면, 챗봇에게 질문해보세요!  
-기어비 계산, 캠 운동 거리, 개념 설명 등도 도와줍니다.
-""")
-st.page_link("pages/7_chatbot_helper.py", label="🤖 챗봇 도우미 열기")
+    st.page_link("pages/4_기어 장치.py", label="4. 기어의 원리", icon="⚙️")
+    st.page_link("pages/5_링크 장치.py", label="5. 링크의 원리", icon="🔧")
+    st.page_link("pages/6_오토마타 설계.py", label="6. 오토마타 설계 및 제작", icon="🛠️")
 
 

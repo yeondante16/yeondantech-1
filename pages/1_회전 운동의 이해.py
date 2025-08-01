@@ -39,50 +39,6 @@ torque = force * distance
 
 st.markdown(f"🧮 계산된 회전력: **{torque:.2f} Nm**")
 
-# 시각화
-fig, ax = plt.subplots(figsize=(6, 6))
-
-# 회전 중심
-ax.plot(0, 0, marker='o', color='black', markersize=10)
-
-# 원판 배경
-circle = plt.Circle((0, 0), 0.5, color='lightgray', fill=False, linewidth=2)
-ax.add_patch(circle)
-
-# 힘 방향 (빨간 화살표)
-arrow_dx = distance * np.cos(np.pi / 4)
-arrow_dy = distance * np.sin(np.pi / 4)
-ax.arrow(0, 0, arrow_dx, arrow_dy, head_width=0.02, head_length=0.03, fc='red', ec='red', linewidth=2)
-
-# 회전 방향 (보라색 아치형 곡선 + 화살표)
-arc = patches.Arc((0, 0), 1.0, 1.0, angle=0, theta1=45, theta2=135,
-                  color='purple', lw=torque / 50)  # 회전력 크기에 비례한 굵기
-ax.add_patch(arc)
-arrowhead_x = 0.5 * np.cos(np.pi * 3 / 4)
-arrowhead_y = 0.5 * np.sin(np.pi * 3 / 4)
-ax.arrow(arrowhead_x, arrowhead_y, -0.02, 0.02, head_width=0.03, head_length=0.03,
-         fc='purple', ec='purple')  # 방향 표시용
-
-# 텍스트 라벨
-ax.text(arrow_dx + 0.05, arrow_dy + 0.05, f"{force}N", fontproperties=font_prop)
-ax.text(-0.1, -0.6, "회전 중심", fontproperties=font_prop)
-
-# 세팅
-ax.set_xlim(-0.7, 0.7)
-ax.set_ylim(-0.7, 0.7)
-ax.set_aspect('equal')
-ax.axis('off')
-st.pyplot(fig)
-
-# 시각화 설명
-st.markdown("""
-#### 📌 시각화 설명
-- **빨간 화살표**: 힘의 방향  
-- **보라색 아치**: 회전 방향 (굵기 = 회전력의 크기)  
-- **회전 중심점**: 정중앙 (⚙ 표시된 점)  
-> 회전력은 선의 **굵기**로 표현됩니다.  
-> 원의 크기는 시각적 요소로, 실제 회전력과는 무관합니다.
-""")
 
 # 개념 퀴즈
 st.markdown("### 🧠 개념 퀴즈")
