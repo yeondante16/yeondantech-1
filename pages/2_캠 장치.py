@@ -38,5 +38,5 @@ components.html(
 
 # ---- 섹션 2: 캠 활용 예시 ----
 st.subheader("2️⃣ 캠 장치의 활용 예시")
-st.image("pen.png", caption="연필깎이 캠 활용 사례", use_column_width=True)
+st.image("pen.png", caption="캠과 펜 연결 예시", width=300)
 st.markdown("연필깎이부터 자동차 엔진까지, 일상 속에서 캠이 활용되는 다양한 예시를 알아봅니다.")
