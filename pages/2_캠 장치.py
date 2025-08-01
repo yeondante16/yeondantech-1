@@ -3,11 +3,13 @@ import streamlit.components.v1 as components
 
 st.set_page_config(page_title="캠 장치", layout="wide")
 
+
 # ---- 헤더 영역 ----
 col1, col2 = st.columns([1, 3])
 
 with col1:
-    st.image("Cam.gif", caption="캠 운동 예시", use_column_width=True)
+    st.image("cam.gif", caption="캠 운동 예시", use_container_width=True)
+
 
 with col2:
     st.markdown("### 🛠️ 캠(Cam) 장치에 대해 알아봅시다!")
