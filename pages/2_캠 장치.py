@@ -38,7 +38,7 @@ st.markdown("자동 계산기를 활용해 오토마타 제작을 위한 캠의 
 
 # GAS 웹 앱 iframe 삽입
 components.html(
-    '<iframe src="https://script.google.com/macros/s/AKfycbwY0nTLSBUISZUqvXFX5EU-dd9I-nZmXv3Esd91Z6bFH9V229UFcVT1CXQx5k_FGRW9/exec" width="100%" height="600" frameborder="0" allowfullscreen></iframe>',
+    '<iframe src="https://script.google.com/macros/s/AKfycbynwf2JhuSbnAAlqmc7XByofMMyTfCb7ql_WELld2Vb3YR8lHqmezSlGoHwk922evAb/exec" width="100%" height="600" frameborder="0" allowfullscreen></iframe>',
     height=600
 )
 
