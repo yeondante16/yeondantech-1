@@ -27,14 +27,14 @@ st.markdown("""
 col1, col2 = st.columns(2)
 
 with col1:
-    st.page_link("pages/1_rotation_basics.py", label="🔁 1. 회전력 기초 이해", icon="🔍")
-    st.page_link("pages/2_cam_module.py", label="📐 2. 캠의 원리", icon="📈")
-    st.page_link("pages/3_crank_module.py", label="🔄 3. 크랭크의 원리", icon="🎚️")
+    st.page_link("pages/1_회전 운동의 이해.py", label="🔁 1. 회전력 기초 이해", icon="🔍")
+    st.page_link("pages/2_캠 장치.py", label="📐 2. 캠의 원리", icon="📈")
+    st.page_link("pages/3_크랭크 장치.py", label="🔄 3. 크랭크의 원리", icon="🎚️")
 
 with col2:
-    st.page_link("pages/4_gear_module.py", label="⚙️ 4. 기어의 원리", icon="⚙️")
-    st.page_link("pages/5_link_module.py", label="🔗 5. 링크의 원리", icon="🔧")
-    st.page_link("pages/6_automata_final.py", label="🎨 6. 오토마타 설계 및 제작", icon="🛠️")
+    st.page_link("pages/4_기어 장치.py", label="⚙️ 4. 기어의 원리", icon="⚙️")
+    st.page_link("pages/5_링크 장치.py", label="🔗 5. 링크의 원리", icon="🔧")
+    st.page_link("pages/6_오토마타 설계.py", label="🎨 6. 오토마타 설계 및 제작", icon="🛠️")
 
 # 이미지 (선택)
 img_path = os.path.join("assets", "automata_preview.png")
