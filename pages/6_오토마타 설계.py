@@ -51,7 +51,7 @@ st.markdown("### 원하는 플랫폼을 선택하여 제작 과정을 기록해 
 # 구글 프레젠테이션
 col1, col2 = st.columns([1, 5])
 with col1:
-    st.image("pages/구슬.png", width=150)
+    st.image("pages/구슬.png", width=100)
 with col2:
     st.markdown("#### [구글 프레젠테이션](https://workspace.google.com/intl/ko/products/slides/)")
     st.caption("제작 과정을 순서대로 정리하고 사진과 설명을 슬라이드로 쉽게 꾸밀 수 있어요.")
