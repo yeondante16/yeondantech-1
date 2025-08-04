@@ -77,16 +77,18 @@ st.markdown("</div>", unsafe_allow_html=True)
 st.markdown("### 🧭 학습 단계 흐름도")
 
 flow = graphviz.Digraph()
-flow.attr(rankdir='LR', size='10,4')
+flow.attr(rankdir='LR', size='16,8')
 
 flow.node("1", "🔍 회전력 이해", shape="box", width="1.5")
 flow.node("2", "📈 캠 장치", shape="box", width="1.5")
 flow.node("3", "🎚️ 크랭크 장치", shape="box", width="1.5")
 flow.node("4", "⚙️ 기어 장치", shape="box", width="1.5")
 flow.node("5", "🔧 링크 장치", shape="box", width="1.5")
-flow.node("6", "🛠️ 오토마타 설계\n(챗봇 도우미 포함)", shape="box", width="2", style="filled", fillcolor="#e6f7ff")
+flow.node("6", "🛠️ 오토마타 설계\n(챗봇 도우미 활용)", shape="box", width="2", style="filled", fillcolor="#e6f7ff")
+flow.node("7", "🎠 오토마타 제작", shape="box", width="2", style="filled", fillcolor="#ffe6ee")
 
-flow.edges([("1", "2"), ("2", "3"), ("3", "4"), ("4", "5"), ("5", "6")])
+
+flow.edges([("1", "2"), ("2", "3"), ("3", "4"), ("4", "5"), ("5", "6"), ("6", "7")])
 st.graphviz_chart(flow)
 
 # === 페이지 바로가기 ===
