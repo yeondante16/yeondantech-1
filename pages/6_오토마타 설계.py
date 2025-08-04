@@ -1,16 +1,37 @@
-
-
 import streamlit as st
 from datetime import datetime
+from PIL import Image
+import base64
+from io import BytesIO
 
 # 페이지 제목
 st.markdown("## 🛠️ 오토마타 설계를 위한 챗봇 활용하기")
-st.markdown(f"**{datetime(2025, 7, 31).strftime('%Y.%m.%d.')}**")
 
-# 설명 텍스트 + 챗봇 로고 좌측 배치
+# 이미지 base64로 변환
+def get_base64_image(img_path):
+    with open(img_path, "rb") as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+# 이미지 로드 및 인코딩
+img_base64 = get_base64_image("pages/chatlogo.jpg")
+
+# 두 개의 칼럼
 col1, col2 = st.columns([1, 20])
 with col1:
-    st.image("pages/chatlogo.jpg", width=50)
+  st.markdown(
+        f"""
+        <style>
+        .chat-img {{
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+        }}
+        </style>
+        <img class="chat-img" src="data:image/jpeg;base64,{img_base64}">
+        """,
+        unsafe_allow_html=True
+    )
 with col2:
     st.markdown("""
 이 챗봇은 여러분이 오토마타를 설계할 때 아이디어를 떠올리고, 어떻게 움직일지 구체적으로 생각해볼 수 있도록 도와주는 친구예요.  
@@ -30,15 +51,15 @@ st.markdown("### 원하는 플랫폼을 선택하여 제작 과정을 기록해 
 # 구글 프레젠테이션
 col1, col2 = st.columns([1, 5])
 with col1:
-    st.image("pages/구슬.png", width=50)
+    st.image("pages/구슬.png", width=150)
 with col2:
-    st.markdown("#### [구글 프레젠테이션](https://docs.google.com/presentation/your-link)")
+    st.markdown("#### [구글 프레젠테이션](https://workspace.google.com/intl/ko/products/slides/)")
     st.caption("제작 과정을 순서대로 정리하고 사진과 설명을 슬라이드로 쉽게 꾸밀 수 있어요.")
 
 # 구글 사이트도구
 col3, col4 = st.columns([1, 5])
 with col3:
-    st.image("pages/구사.jpg", width=50)
+    st.image("pages/구사.jpg", width=150)
 with col4:
-    st.markdown("#### [구글 사이트도구](https://sites.google.com/your-link)")
+    st.markdown("#### [구글 사이트도구](https://sites.google.com/?hl=ko&tgif=d)")
     st.caption("제작 과정을 홈페이지 형태로 보기 좋게 정리할 수 있어요.")
