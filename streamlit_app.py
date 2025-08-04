@@ -119,7 +119,7 @@ encouragement = random.choice(messages)
 
 with st.sidebar:
     st.markdown("### 🎯 진도율/응원메시지")
-    st.markdown("학습 페이지로 이동하면 진도율과 함께 진행 상태가 표시돼요.")
+    st.markdown("학습 페이지로 이동하면 진도율이 표시돼요.")
     st.markdown(f"""
         <div style='
             background-color:#ffffff;
