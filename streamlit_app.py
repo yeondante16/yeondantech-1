@@ -1,44 +1,62 @@
 import streamlit as st
 import graphviz
+import random
 
 st.set_page_config(page_title="오토마타 설계 흐름", layout="wide")
 
-# 스타일
 st.markdown("""
     <style>
-    .container {
-        max-width: 1200px;  /* 📌 기존보다 더 넓게 */
-        margin: 0 auto;
-        padding: 20px 30px;
+    /* 전체 배경색 */
+    body {
+        background-color: #f8f4fc;
     }
+
+    /* 🌸 콘텐츠 카드 스타일 (1.5배 확장) */
+    .block-container {
+        background-color: #fefaff;
+        max-width: 1440px;  /* 기존 1200px → 1440px */
+        margin: 60px auto;
+        padding: 80px 65px;  /* 기존 padding보다 넓게 */
+        border-radius: 30px;
+        box-shadow: 0 0 30px rgba(0,0,0,0.05);
+    }
+
     .intro-box {
-        background-color: #f9f9fc;
-        padding: 18px 24px;
-        border-radius: 16px;
-        box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+        background-color: #eae2f8;
+        padding: 20px 26px;
+        border-radius: 18px;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.04);
         margin-bottom: 30px;
     }
-    .tight-col {
-        display: flex;
-        align-items: flex-start;
-        gap: 24px;
-        margin-bottom: 30px;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #4c3575;
     }
+
+    p, li, a, span {
+        color: #333333;
+    }
+
     .round-img {
         border-radius: 50%;
         width: 160px;
         height: 160px;
         object-fit: cover;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    [data-testid="stSidebar"] {
+        background-color: #f4ebff;
     }
     </style>
 """, unsafe_allow_html=True)
 
-# 시작
-st.markdown("<div class='container'>", unsafe_allow_html=True)
+
+
+# === 제목 ===
 st.markdown("## 🛠️ 오토마타 설계 프로젝트")
 
-# 오토마타 소개
+# === 오토마타 소개 ===
 st.markdown("<div class='tight-col'>", unsafe_allow_html=True)
 col1, col2 = st.columns([1, 3])
 with col1:
@@ -54,11 +72,11 @@ with col2:
     """, unsafe_allow_html=True)
 st.markdown("</div>", unsafe_allow_html=True)
 
-# 학습 단계 흐름도
+# === 학습 흐름도 ===
 st.markdown("### 🧭 학습 단계 흐름도")
 
 flow = graphviz.Digraph()
-flow.attr(rankdir='LR', size='10,4')  # 📌 여기서 크기 키움
+flow.attr(rankdir='LR', size='10,4')
 
 flow.node("1", "🔍 회전력 이해", shape="box", width="1.5")
 flow.node("2", "📈 캠 장치", shape="box", width="1.5")
@@ -68,10 +86,9 @@ flow.node("5", "🔧 링크 장치", shape="box", width="1.5")
 flow.node("6", "🛠️ 오토마타 설계\n(챗봇 도우미 포함)", shape="box", width="2", style="filled", fillcolor="#e6f7ff")
 
 flow.edges([("1", "2"), ("2", "3"), ("3", "4"), ("4", "5"), ("5", "6")])
-
 st.graphviz_chart(flow)
 
-# 바로가기 링크 (보조용)
+# === 페이지 바로가기 ===
 st.markdown("### 🔗 페이지 바로가기")
 col1, col2, col3 = st.columns(3)
 with col1:
@@ -84,12 +101,10 @@ with col3:
     st.page_link("pages/5_링크 장치.py", label="5단계: 링크", icon="🔧")
     st.page_link("pages/6_오토마타 설계.py", label="6단계: 오토마타 설계", icon="🛠️")
 
+# === 닫기용 div ===
 st.markdown("</div>", unsafe_allow_html=True)
 
-
-import random
-
-# === 메인페이지용 랜덤 응원 메시지 ===
+# === 사이드바 요소 ===
 messages = [
     "시작이 반이에요! 🚀",
     "이제부터 함께해요! 🤝",
@@ -97,21 +112,15 @@ messages = [
     "마음의 엔진 시동 걸기! 🔧",
     "오늘도 멋진 하루예요! 🌞",
 ]
-
 encouragement = random.choice(messages)
 
-# === 사이드바 표시 ===
 with st.sidebar:
     st.markdown("---")
     st.markdown("### 🎯 프로젝트 홈")
-    st.markdown("""
-    학습 페이지로 이동하면  
-    진도율과 함께 진행 상태가 표시돼요.
-    """)
-
+    st.markdown("학습 페이지로 이동하면 진도율과 함께 진행 상태가 표시돼요.")
     st.markdown(f"""
         <div style='
-            background-color:#f0f2f6;
+            background-color:#ffffff;
             padding:16px;
             border-radius:12px;
             margin-top:10px;

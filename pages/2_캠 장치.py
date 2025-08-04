@@ -2,6 +2,45 @@ import streamlit as st
 import streamlit.components.v1 as components
 import requests
 
+st.set_page_config(layout="wide")
+
+st.markdown("""
+    <style>
+    body {
+        background-color: #f8f4fc;
+    }
+
+    .block-container {
+        background-color: #fefaff;
+        max-width: 1440px;
+        margin: 60px auto;
+        padding: 80px 65px;
+        border-radius: 30px;
+        box-shadow: 0 0 30px rgba(0,0,0,0.05);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #4c3575;
+    }
+
+    p, li, a, span {
+        color: #333333;
+    }
+
+    .round-img {
+        border-radius: 50%;
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    [data-testid="stSidebar"] {
+        background-color: #f4ebff;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 st.set_page_config(page_title="캠 장치", layout="wide")
 
 
@@ -68,7 +107,7 @@ with st.sidebar:
 
     st.markdown(f"""
         <div style='
-            background-color:#f0f2f6;
+            background-color:#ffffff;
             padding:16px;
             border-radius:12px;
             margin-top:10px;
