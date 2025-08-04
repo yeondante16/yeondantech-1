@@ -1,6 +1,6 @@
 [theme]
-primaryColor = "#D98880"              # 따뜻한 레드톤 포인트
+primaryColor = "#e2c9e7ff"              # 따뜻한 레드톤 포인트
 backgroundColor = "#FFFDF6"           # 아이보리 배경
-secondaryBackgroundColor = "#FDEDEC"  # 사이드바나 카드 배경
+secondaryBackgroundColor = "#f6e4ffff"  # 사이드바나 카드 배경
 textColor = "#4A4A4A"
 font = "sans serif"
