@@ -2,7 +2,7 @@ import streamlit as st
 import graphviz
 import random
 
-st.set_page_config(page_title="오토마타 설계 흐름", layout="wide")
+st.set_page_config(page_title="오토마타 프로젝트", layout="wide")
 
 st.markdown("""
     <style>
