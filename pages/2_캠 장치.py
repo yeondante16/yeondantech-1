@@ -16,7 +16,7 @@ st.markdown("""
         margin: 60px auto;
         padding: 80px 65px;
         border-radius: 30px;
-        box-shadow: 0 0 30px rgba(0,0,0,0.05);
+        box-shadow: 0 0 30px rgba(0,0,0,0.15);
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -101,10 +101,8 @@ messages = [
 encouragement = random.choice(messages)
 
 with st.sidebar:
-    st.markdown("---")
-    st.markdown("### 📊 학습 진도율")
-    st.progress(progress_percent)
-
+    st.markdown("### 🎯 프로젝트 홈")
+    st.markdown("학습 페이지로 이동하면 진도율과 함께 진행 상태가 표시돼요.")
     st.markdown(f"""
         <div style='
             background-color:#ffffff;
@@ -118,7 +116,9 @@ with st.sidebar:
         </div>
     """, unsafe_allow_html=True)
 
-with st.sidebar:
+    # ✨ 한 줄짜리 구분선 스타일로 대체
+    st.markdown("<hr style='margin: 20px 0; border: none; height: 1px; background-color: #ccc;'>", unsafe_allow_html=True)
+
     st.markdown("### ❓ 선생님께 질문하기")
     st.markdown("궁금한 점이 있다면 아래 버튼을 눌러 작성해 주세요 👇")
     st.markdown("[📨 질문 제출하기](https://forms.gle/c8QjUWExyaQe69XL6)", unsafe_allow_html=True)
