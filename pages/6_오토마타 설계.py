@@ -7,8 +7,12 @@ from datetime import datetime
 st.markdown("## 🛠️ 오토마타 설계를 위한 챗봇 활용하기")
 st.markdown(f"**{datetime(2025, 7, 31).strftime('%Y.%m.%d.')}**")
 
-# 설명 텍스트
-st.markdown("""
+# 설명 텍스트 + 챗봇 로고 좌측 배치
+col1, col2 = st.columns([1, 20])
+with col1:
+    st.image("pages/chatlogo.jpg", width=50)
+with col2:
+    st.markdown("""
 이 챗봇은 여러분이 오토마타를 설계할 때 아이디어를 떠올리고, 어떻게 움직일지 구체적으로 생각해볼 수 있도록 도와주는 친구예요.  
 “무엇이 어떻게 움직이면 좋을까?”, “그 움직임은 어느 방향으로, 얼마나 크게 움직일까?” 같은 질문을 던지면서, 여러분이 스스로 상상하고 계획할 수 있도록 도와줄 거예요.  
 너무 막연하다면 “다 해줘!”보다는 “조금 더 스스로 생각해보자!” 하고 한숨 쉬게 말할 수도 있어요.  
@@ -17,11 +21,11 @@ st.markdown("""
 """)
 
 # 챗봇 링크 버튼
-st.image("pages/chatlogo.jpg", width=50)
 st.markdown("[👉 챗봇 링크로 이동하기](https://chatgpt.com/g/g-688b4f233028819195ce21dc0461b654-otomata-jejag-doumi)", unsafe_allow_html=True)
 
 st.markdown("---")
 st.markdown("### 원하는 플랫폼을 선택하여 제작 과정을 기록해 주세요!")
+
 
 # 구글 프레젠테이션
 col1, col2 = st.columns([1, 5])
